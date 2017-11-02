@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 100px;
+			float: left;
+			border-top: 1px solid #ccc;
+			margin: 20px;
+		}
+		li{
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+			text-align: center;
+			list-style: none;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
+		div{
+			width: 100%;
+			float: left;
+		}
+		input{
+			float: left;
+		}
+		button{
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="type" name="" class="inp1">
+		<input type="type" name="" class="inp2">
+		<input type="type" name="" class="inp3">
+		<input type="type" name="" class="inp4">
+		<button class="btn">增加</button>
+	</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript">
+	
+	$('.btn').click(function(){
+		var yi=$('.inp1').val();
+		var er=$('.inp2').val();
+		var san=$('.inp3').val();
+		var si=$('.inp4').val();
+		$.ajax({
+			url:'http://localhost:3000/item/list1',
+			type:'POST',
+			data:{
+				yi:yi,
+				er:er,
+				san:san,
+				si:si
+			},
+			success:function(e){
+
+			}
+		})
+	})
+</script>
+</html>
